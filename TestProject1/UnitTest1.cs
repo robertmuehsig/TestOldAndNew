@@ -8,7 +8,13 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
+            // works
             Person person = new Person() { Name = "Test" };
+
+            // throws
+            string xml = @"<Person><Name>John Doe</Name></Person>";
+            Person personX = Person.DeserializeFromXml(xml);
+            Console.WriteLine(personX.Name);
         }
     }
 }
